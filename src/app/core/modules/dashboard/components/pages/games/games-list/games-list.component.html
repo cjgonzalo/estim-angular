@@ -1,0 +1,8 @@
+<div class="responsive-grid mt-4" *ngIf="games$ | async">
+  <app-game-card
+    *ngFor="let game of games$ | async"
+    [game]="game"
+    [currentUser]="currentUser"
+    (refreshList)="getGames()"
+  ></app-game-card>
+</div>

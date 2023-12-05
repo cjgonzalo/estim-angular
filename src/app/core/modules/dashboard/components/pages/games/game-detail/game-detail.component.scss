@@ -1,0 +1,17 @@
+mat-card-content {
+  display: flex;
+  justify-content: space-evenly;
+
+  img {
+    max-width: 540px;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+mat-card-actions {
+  justify-content: flex-end;
+}
