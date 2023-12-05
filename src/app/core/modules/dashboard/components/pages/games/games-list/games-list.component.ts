@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, map, shareReplay } from 'rxjs';
-import { Game, SafeUser } from 'src/app/shared/types/types';
+import { SafeUser } from 'src/app/shared/types/users.types';
+import { Game } from 'src/app/shared/types/games.types';
 import { GamesService } from '../../../../services/games.service';
 import { AuthService } from 'src/app/core/modules/auth/services/auth.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';

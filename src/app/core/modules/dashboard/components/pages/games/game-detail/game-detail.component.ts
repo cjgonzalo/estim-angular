@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Game, Purchase, Role, SafeUser } from 'src/app/shared/types/types';
+import { Game } from 'src/app/shared/types/games.types';
+import { Purchase } from 'src/app/shared/types/puchases.types';
+import { Role, SafeUser } from 'src/app/shared/types/users.types';
 import { Observable, Subscription, map, shareReplay } from 'rxjs';
 import { GamesService } from '../../../../services/games.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -50,7 +52,7 @@ export class GameDetailComponent implements OnInit, OnDestroy {
         this.game = game;
       });
 
-      if (this.currentUser?.role === Role.User) {
+      if (this.currentUser?.role === Role.user) {
         this.purchases$ = this.purchasesService.getPurchasesByBuyer(this.currentUser?.id);
         this.purchasesSubscription = this.purchases$.subscribe(purchases => {
           this.hasPurchasedGame = purchases.some(purchase => purchase.gameId === gameId);
@@ -66,7 +68,7 @@ export class GameDetailComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.gameSubscription.unsubscribe();
     this.isHandsetSubscription.unsubscribe();
-    if (this.currentUser?.role === Role.User) {
+    if (this.currentUser?.role === Role.user) {
       this.purchasesSubscription.unsubscribe();
     }
   }

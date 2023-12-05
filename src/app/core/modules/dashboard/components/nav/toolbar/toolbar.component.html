@@ -18,17 +18,17 @@
       <mat-icon>view_list</mat-icon>
       <span>DLCs list</span>
     </button>
-    <button mat-menu-item routerLink="/dashboard/games/add" *ngIf="currentUser?.role === Role.Agent">
+    <button mat-menu-item routerLink="/dashboard/games/add" *ngIf="currentUser?.role === Role.agent">
       <mat-icon>add</mat-icon>
       <span>Add game</span>
     </button>
-    <button mat-menu-item routerLink="/dashboard/dlcs/add" *ngIf="currentUser?.role === Role.Agent">
+    <button mat-menu-item routerLink="/dashboard/dlcs/add" *ngIf="currentUser?.role === Role.agent">
       <mat-icon>add</mat-icon>
       <span>Add DLC</span>
     </button>
   </mat-menu>
 
-  <button mat-button class="mr-2" [matMenuTriggerFor]="genresMenu" *ngIf="currentUser?.role === Role.Admin">
+  <button mat-button class="mr-2" [matMenuTriggerFor]="genresMenu" *ngIf="currentUser?.role === Role.admin">
     Genres
   </button>
   <mat-menu #genresMenu="matMenu">
@@ -42,7 +42,7 @@
     </button>
   </mat-menu>
 
-  <button mat-button class="mr-2" routerLink="/dashboard/lend" *ngIf="currentUser?.role === Role.User">
+  <button mat-button class="mr-2" routerLink="/dashboard/lend" *ngIf="currentUser?.role === Role.user">
     Lend
   </button>
 

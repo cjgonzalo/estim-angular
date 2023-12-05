@@ -2,7 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { GamesService } from 'src/app/core/modules/dashboard/services/games.service';
 import { ConfirmModalComponent } from 'src/app/shared/components/modal/confirm-modal/confirm-modal.component';
-import { Game, SafeUser, Role } from 'src/app/shared/types/types';
+import { Game } from 'src/app/shared/types/games.types';
+import { SafeUser, Role } from 'src/app/shared/types/users.types';
 
 @Component({
   selector: 'app-game-card',

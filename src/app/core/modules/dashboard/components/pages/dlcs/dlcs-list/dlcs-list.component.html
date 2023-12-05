@@ -1,5 +1,5 @@
 <div *ngIf="DLCs$ | async" class="mt-4">
   <div *ngFor="let DLC of DLCs$ | async">
-    <P>{{DLC.name}}</P>
+    <P>{{DLC.relatedGame.name}}</P>
   </div>
 </div>

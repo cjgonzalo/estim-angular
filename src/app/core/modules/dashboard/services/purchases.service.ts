@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NewPurchase, Purchase } from 'src/app/shared/types/types';
+import { Purchase } from 'src/app/shared/types/puchases.types';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -23,7 +23,7 @@ export class PurchasesService {
     return this.http.get<Purchase[]>(this.url);
   }
 
-  addPurchase(data: NewPurchase): Observable<Purchase> {
+  addPurchase(data: Purchase): Observable<Purchase> {
     return this.http.post<Purchase>(this.url, data);
   }
 }

@@ -3,19 +3,24 @@
     <mat-card-title>{{game.name}}</mat-card-title>
     <mat-card-subtitle>{{game.genre}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="/assets/images/no-image.jpg" alt="Photo of game">
+  <ng-container *ngIf="game.img.length !== 0; else noImage"; >
+    <img mat-card-image src="/assets/images/{{game.img}}" alt="{{game.name}} logo">
+  </ng-container>
+  <ng-template #noImage>
+    <img mat-card-image src="/assets/images/no-image.jpg" alt="No image available">
+  </ng-template>
   <mat-card-content>
     <h3><b>{{game.price | currency }}</b></h3>
   </mat-card-content>
   <mat-card-actions>
-    <ng-container *ngIf="currentUser?.role === Role.User">
+    <ng-container *ngIf="currentUser?.role === Role.user">
       <button
         mat-stroked-button
         color="primary"
         routerLink="/dashboard/games/{{game.id}}"
       >View</button>
     </ng-container>
-    <ng-container *ngIf="currentUser?.role === Role.Agent">
+    <ng-container *ngIf="currentUser?.role === Role.agent">
       <button mat-icon-button color="accent"(click)="editGame()"><mat-icon>edit</mat-icon></button>
       <button mat-icon-button color="warn" (click)="deleteGame()"><mat-icon>delete</mat-icon></button>
     </ng-container>

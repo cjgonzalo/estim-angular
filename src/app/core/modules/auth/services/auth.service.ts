@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
 import { exclude } from 'src/app/shared/helpers/exclude-object-fields';
-import { LogInRequest, SafeUser, User } from 'src/app/shared/types/types';
+import { LogInRequest, SafeUser, User } from 'src/app/shared/types/users.types';
 import { environment } from 'src/environments/environment';
 
 @Injectable()

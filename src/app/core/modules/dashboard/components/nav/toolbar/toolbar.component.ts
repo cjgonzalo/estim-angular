@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/modules/auth/services/auth.service';
-import { Role, SafeUser } from 'src/app/shared/types/types';
+import { Role, SafeUser } from 'src/app/shared/types/users.types';
 
 @Component({
   selector: 'app-toolbar',

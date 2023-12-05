@@ -1,7 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Game, PaymentMethod, SafeUser } from 'src/app/shared/types/types';
+import { Game } from 'src/app/shared/types/games.types';
+import { SafeUser } from 'src/app/shared/types/users.types';
+import { PaymentMethod } from 'src/app/shared/types/puchases.types';
 import { PurchasesService } from '../../../../services/purchases.service';
 import { Router } from '@angular/router';
 
@@ -16,6 +18,7 @@ interface DialogData {
   templateUrl: './add-purchase.component.html',
   styleUrls: ['./add-purchase.component.scss']
 })
+
 export class AddPurchaseComponent implements OnInit {
   game!: Game;
   addPurchaseForm!: FormGroup;

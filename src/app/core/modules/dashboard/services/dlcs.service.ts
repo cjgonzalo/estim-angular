@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DLC, NewDLC } from 'src/app/shared/types/types';
+import { DLC } from 'src/app/shared/types/games.types';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -18,7 +18,7 @@ export class DLCsService {
     return this.http.get<DLC[]>(this.url);
   }
 
-  addDLC(data: NewDLC): Observable<DLC> {
+  addDLC(data: DLC): Observable<DLC> {
     return this.http.post<DLC>(this.url, data);
   }
 }

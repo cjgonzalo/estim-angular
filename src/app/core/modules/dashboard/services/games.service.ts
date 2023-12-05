@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Game, NewGame } from 'src/app/shared/types/types';
+import { Game } from 'src/app/shared/types/games.types';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -18,11 +18,11 @@ export class GamesService {
     return this.http.get<Game[]>(this.url);
   }
 
-  addGame(data: NewGame): Observable<Game> {
+  addGame(data: Game): Observable<Game> {
     return this.http.post<Game>(this.url, data);
   }
 
-  deleteGame(gameId: number): Observable<Game> {
+  deleteGame(gameId: number | undefined): Observable<Game> {
     return this.http.delete<Game>(`${this.url}/${gameId}`);
   }
 }
